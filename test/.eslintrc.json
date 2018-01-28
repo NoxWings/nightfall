@@ -45,6 +45,7 @@
         "complexity":     [ "warn", 8 ]
     },
     "globals": {
+        "chai": true,
         "sinon": true
     }
 }
