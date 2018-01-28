@@ -26,7 +26,7 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin([ FOLDERS.DIST ]),
         new CopyWebpackPlugin([{ from: FOLDERS.STATIC, to: FOLDERS.DIST }]),
-        new CopyWebpackPlugin([{ from: FOLDERS.ASSETS, to: FOLDERS.DIST_ASSETS }]),
+        new CopyWebpackPlugin([{ from: FOLDERS.ASSETS, to: FOLDERS.DIST_ASSETS, flatten: true }]),
         new webpack.optimize.CommonsChunkPlugin({
             name: "engine",
             minChunks: Infinity,
