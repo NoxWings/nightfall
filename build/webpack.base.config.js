@@ -7,7 +7,7 @@ const FOLDERS = require("./constants").FOLDERS;
 module.exports = {
     entry: {
         app: path.join(FOLDERS.SRC, "index.js"),
-        engine: [ "three" ]
+        engine: [ "babylonjs" ]
     },
     module: {
         rules: [

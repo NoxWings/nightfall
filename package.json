@@ -37,6 +37,7 @@
     "webpack-merge": "^4.1.1"
   },
   "dependencies": {
-    "three": "~0.89.0"
+    "babel-runtime": "^6.26.0",
+    "babylonjs": "~3.1.1"
   }
 }
