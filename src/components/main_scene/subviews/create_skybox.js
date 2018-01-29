@@ -12,6 +12,8 @@ export default function createSkyBox(scene, baseTexture, size) {
     skyboxMaterial.reflectionTexture.coordinatesMode = BABYLON.Texture.SKYBOX_MODE;
     skyboxMaterial.diffuseColor = BABYLON.Color3.Black();
     skyboxMaterial.specularColor = BABYLON.Color3.Black();
+    skyboxMaterial.disableLighting = true;
+    skyboxMaterial.fogEnabled = false;
 
     skybox.material = skyboxMaterial;
 

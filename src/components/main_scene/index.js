@@ -15,6 +15,8 @@ export default class MainScene extends BABYLON.Scene {
 
         this._createStaticGeometry();
 
+        this._createFog();
+
         this._createProbe();
     }
 
@@ -44,6 +46,12 @@ export default class MainScene extends BABYLON.Scene {
 
         this.staticMeshes.push(this._ground);
         this.staticMeshes.push(this._skybox);
+    }
+
+    _createFog () {
+        this.fogMode = BABYLON.Scene.FOGMODE_EXP2;
+        this.fogColor = new BABYLON.Color3(0.03, 0.03, 0.04);
+        this.fogDensity = 0.01;
     }
 
     _createProbe () {
