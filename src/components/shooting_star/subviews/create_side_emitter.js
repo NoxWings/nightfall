@@ -1,7 +1,7 @@
 import BABYLON from "babylonjs";
 
 export default function createSideEmitter(scene) {
-    var particleSystem = new BABYLON.ParticleSystem("particles", 2000, scene);
+    const particleSystem = new BABYLON.ParticleSystem("particles", 2000, scene);
 
     //Texture of each particle
     particleSystem.particleTexture = new BABYLON.Texture("assets/flare.png", scene);

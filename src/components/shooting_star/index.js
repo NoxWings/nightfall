@@ -17,11 +17,11 @@ export default class ShootingStart extends BABYLON.Mesh {
     }
 
     _addBall () {
-        this.ball = BABYLON.Mesh.CreateSphere("Meteorite", 32, 1, this._scene);
+        this.ball = BABYLON.Mesh.CreateSphere("Star", 32, 1, this._scene);
         this.ball.parent = this;
         this.ball.scaling.y = 2;
 
-        var m = new BABYLON.StandardMaterial("Mat", this._scene);
+        const m = new BABYLON.StandardMaterial("StarMat", this._scene);
         m.disableLighting = true;
         m.emissiveColor = BABYLON.Color3.White();
         m.emissiveFresnelParameters = new BABYLON.FresnelParameters();
@@ -34,7 +34,7 @@ export default class ShootingStart extends BABYLON.Mesh {
     }
 
     _addEmitters () {
-        var ps1 = createSideEmitter(this._scene);
+        const ps1 = createSideEmitter(this._scene);
         ps1.emitter = this.ball; // the starting object, the emitter
         ps1.minEmitBox = new BABYLON.Vector3(0.4, 0, 0); // Starting all from
         ps1.maxEmitBox = new BABYLON.Vector3(0.4, 0, 0); // To...
@@ -42,7 +42,7 @@ export default class ShootingStart extends BABYLON.Mesh {
         ps1.direction2 = new BABYLON.Vector3(6, 15, 0);
         ps1.start();
 
-        var ps2 = createSideEmitter(this._scene);
+        const ps2 = createSideEmitter(this._scene);
         ps2.emitter = this.ball; // the starting object, the emitter
         ps2.minEmitBox = new BABYLON.Vector3(-0.4, 0, 0); // Starting all from
         ps2.maxEmitBox = new BABYLON.Vector3(-0.4, 0, 0); // To...
