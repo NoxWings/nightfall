@@ -14,10 +14,10 @@ export default class MainScene extends BABYLON.Scene {
         this._createLight();
 
         this._createStaticGeometry();
+        this._createProbe();
 
         this._createFog();
 
-        this._createProbe();
     }
 
     _createCamera () {
