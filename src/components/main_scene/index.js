@@ -2,6 +2,7 @@ import BABYLON from "babylonjs";
 
 import createSkybox from "./subviews/create_skybox";
 import createGround from "./subviews/create_ground";
+import ShootingStart from "../shooting_star";
 
 export default class MainScene extends BABYLON.Scene {
     constructor(engine) {
@@ -18,6 +19,7 @@ export default class MainScene extends BABYLON.Scene {
 
         this._createFog();
 
+        this._createDinamicGeometry();
     }
 
     _createCamera () {
@@ -63,5 +65,11 @@ export default class MainScene extends BABYLON.Scene {
         });
 
         this.probe.position = new BABYLON.Vector3(0, 2, 0);
+    }
+
+    _createDinamicGeometry () {
+        this.star = new ShootingStart(this);
+
+        this.star.position = new BABYLON.Vector3(-2, 1, 10);
     }
 }
