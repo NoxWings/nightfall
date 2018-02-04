@@ -1,7 +1,7 @@
 import BABYLON from "babylonjs";
 
 import createSkybox from "./subviews/create_skybox";
-import createGround from "./subviews/create_ground";
+import createOcean from "./subviews/create_ocean";
 
 import ShootingStart from "../shooting_star";
 import LowFog from "../low_fog";
@@ -22,6 +22,7 @@ export default class MainScene extends BABYLON.Scene {
         this._createDinamicGeometry();
 
         this._createProbe();
+        this._createOcean();
     }
 
     _createCamera () {
@@ -54,22 +55,19 @@ export default class MainScene extends BABYLON.Scene {
     }
 
     _createFog () {
-        this.fog = new LowFog("Fog", this, 500, 50, 0.1, 2);
-        this.fog.position = new BABYLON.Vector3(0, 2, 0);
+        this._fog = new LowFog("Fog", this, 500, 50, 0.05, 2);
+        this._fog.position = new BABYLON.Vector3(0, 2, 0);
     }
 
     _createStaticGeometry () {
-        this._ground = createGround(this, 1000);
         this._skybox = createSkybox(this, "assets/grimmnight", 10000);
         this._skybox.position.y = 400;
-
-        this.staticMeshes.push(this._ground);
         this.staticMeshes.push(this._skybox);
     }
 
     _createDinamicGeometry () {
-        this.star = new ShootingStart(this);
-        this.star.position = new BABYLON.Vector3(-2, 3.5, 10);
+        this._star = new ShootingStart(this);
+        this._star.position = new BABYLON.Vector3(-2, 3.5, 10);
     }
 
     _createProbe () {
@@ -81,5 +79,13 @@ export default class MainScene extends BABYLON.Scene {
         });
 
         this.probe.position = new BABYLON.Vector3(0, 2, 0);
+    }
+
+    _createOcean () {
+        this._ocean = createOcean(this);
+        this._ocean.position = new BABYLON.Vector3(0, -50, 0);
+        this.staticMeshes.forEach(mesh => {
+            this._ocean.material.addToRenderList(mesh);
+        });
     }
 }
