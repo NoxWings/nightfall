@@ -16,12 +16,12 @@ export default class LowFog extends BABYLON.Mesh {
         fogPS.minEmitBox = new BABYLON.Vector3(-side, 0, -side);
         fogPS.maxEmitBox = new BABYLON.Vector3(side, 0, side);
 
-        fogPS.color1 = new BABYLON.Color4(0.8, 0.8, 0.8, strength * 0.05);
-        fogPS.color2 = new BABYLON.Color4(.95, .95, .95, strength * 0.1);
-        fogPS.colorDead = new BABYLON.Color4(0.9, 0.9, 0.9, strength * 0.1);
+        fogPS.color1 = new BABYLON.Color4(1, 0.5, 0.8, strength * 0.05);
+        fogPS.color2 = new BABYLON.Color4(1, 0.5, .8, strength * 0.1);
+        fogPS.colorDead = new BABYLON.Color4(0.75, 0.6, 0.9, strength * 0.1);
 
-        fogPS.minSize = 4.0;
-        fogPS.maxSize = 5.0;
+        fogPS.minSize = 7.0;
+        fogPS.maxSize = 12.0;
 
         fogPS.minLifeTime = 360;
         fogPS.maxLifeTime = 500;
