@@ -39,7 +39,7 @@
         } ],
 
         /* Code smells/alerts */
-        "max-statements": [ "warn", 20 ],
+        // "max-statements": [ "warn", 20 ],
         "complexity":     [ "warn", 8 ]
     }
 }
