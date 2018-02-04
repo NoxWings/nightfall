@@ -14,6 +14,7 @@ export default class MainScene extends BABYLON.Scene {
         this.staticMeshes = [];
 
         this._createCamera();
+        this._createPostProcessing();
         this._createLight();
 
         this._createStaticGeometry();
@@ -29,7 +30,18 @@ export default class MainScene extends BABYLON.Scene {
         this.mainCamera = new BABYLON.FreeCamera("camera", new BABYLON.Vector3(0, 3.5, 0), this);
         this.mainCamera.fov = 60 * degToRad;
         this.mainCamera.rotation.x = -10 * degToRad;
+    }
 
+    _createPostProcessing () {
+        this.pipeline = new BABYLON.DefaultRenderingPipeline("default", true, this, [this.mainCamera]);
+
+        this.pipeline.bloomEnabled = false;
+        this.pipeline.bloomWeight = 0.3;
+
+        this.pipeline.imageProcessingEnabled = true;
+        this.pipeline.imageProcessing.vignetteEnabled = true;
+        this.pipeline.imageProcessing.exposure = 1.5;
+        this.pipeline.imageProcessing.contrast = 1.2;
     }
 
     _createLight () {
@@ -62,7 +74,7 @@ export default class MainScene extends BABYLON.Scene {
     }
 
     _createFog () {
-        this.fog = new LowFog("Fog", this, 500, 50, 0.5, 2);
+        this.fog = new LowFog("Fog", this, 500, 50, 0.1, 2);
         this.fog.position = new BABYLON.Vector3(0, 2, 0);
     }
 
