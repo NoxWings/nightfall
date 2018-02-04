@@ -10,7 +10,6 @@ export default function (scene) {
     water.waveHeight = 1;
     water.bumpHeight = 0.1;
     water.windDirection = new BABYLON.Vector2(1, 1);
-    window.water = water;
     water.waterColor = new BABYLON.Color3(0, 0, 221 / 255);
     water.colorBlendFactor = 0.002;
     waterMesh.material = water;
