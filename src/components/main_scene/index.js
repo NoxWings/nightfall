@@ -2,7 +2,9 @@ import BABYLON from "babylonjs";
 
 import createSkybox from "./subviews/create_skybox";
 import createGround from "./subviews/create_ground";
+
 import ShootingStart from "../shooting_star";
+import LowFog from "../low_fog";
 
 export default class MainScene extends BABYLON.Scene {
     constructor(engine) {
@@ -18,14 +20,14 @@ export default class MainScene extends BABYLON.Scene {
         this._createProbe();
 
         this._createFog();
-
         this._createDinamicGeometry();
     }
 
     _createCamera () {
         const beta = -Math.PI * 0.415;
         const alpha = Math.PI * 0.585;
-        const target = BABYLON.Vector3.Up();
+
+        const target = BABYLON.Vector3.Up().scaleInPlace(3.5);
         const fov = Math.PI / 3;
 
         this.mainCamera = new BABYLON.ArcRotateCamera("camera", beta, alpha, 0.01, target, this);
@@ -50,12 +52,6 @@ export default class MainScene extends BABYLON.Scene {
         this.staticMeshes.push(this._skybox);
     }
 
-    _createFog () {
-        this.fogMode = BABYLON.Scene.FOGMODE_EXP2;
-        this.fogColor = new BABYLON.Color3(0.03, 0.03, 0.04);
-        this.fogDensity = 0.01;
-    }
-
     _createProbe () {
         this.probe = new BABYLON.ReflectionProbe("probe", 512, this);
         this.probe.refreshRate = BABYLON.RenderTargetTexture.REFRESHRATE_RENDER_ONCE;
@@ -67,9 +63,13 @@ export default class MainScene extends BABYLON.Scene {
         this.probe.position = new BABYLON.Vector3(0, 2, 0);
     }
 
+    _createFog () {
+        this.fog = new LowFog("Fog", this, 500, 50, 0.5, 2);
+        this.fog.position = new BABYLON.Vector3(0, 2, 0);
+    }
+
     _createDinamicGeometry () {
         this.star = new ShootingStart(this);
-
-        this.star.position = new BABYLON.Vector3(-2, 1, 10);
+        this.star.position = new BABYLON.Vector3(-2, 3.5, 10);
     }
 }
