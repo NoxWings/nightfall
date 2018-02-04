@@ -8,7 +8,7 @@ export default function (scene) {
     water.windForce = 3;
     water.waveSpeed = 30;
     water.waveHeight = 1;
-    water.bumpHeight = 0.1;
+    water.bumpHeight = 0.2;
     water.windDirection = new BABYLON.Vector2(1, 1);
     water.waterColor = new BABYLON.Color3(0, 0, 221 / 255);
     water.colorBlendFactor = 0.002;

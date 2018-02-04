@@ -55,7 +55,7 @@ export default class MainScene extends BABYLON.Scene {
     }
 
     _createFog () {
-        this._fog = new LowFog("Fog", this, 500, 50, 0.05, 2);
+        this._fog = new LowFog("Fog", this, 1000, 50, 0.05, 2);
         this._fog.position = new BABYLON.Vector3(0, 2, 0);
     }
 
