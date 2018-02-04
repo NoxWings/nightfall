@@ -16,7 +16,7 @@ export default class MainScene extends BABYLON.Scene {
         this._createCamera();
         this._createPostProcessing();
         this._createLight();
-        this._createFog();
+        // this._createFog();
 
         this._createStaticGeometry();
         this._createDinamicGeometry();
@@ -60,8 +60,7 @@ export default class MainScene extends BABYLON.Scene {
     }
 
     _createStaticGeometry () {
-        this._skybox = createSkybox(this, "assets/grimmnight", 10000);
-        this._skybox.position.y = 400;
+        this._skybox = createSkybox(this, "assets/cartoon", 10000);
         this.staticMeshes.push(this._skybox);
     }
 
