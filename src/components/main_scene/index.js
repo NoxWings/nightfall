@@ -24,14 +24,12 @@ export default class MainScene extends BABYLON.Scene {
     }
 
     _createCamera () {
-        const beta = -Math.PI * 0.415;
-        const alpha = Math.PI * 0.585;
+        const degToRad = Math.PI / 180;
 
-        const target = BABYLON.Vector3.Up().scaleInPlace(3.5);
-        const fov = Math.PI / 3;
+        this.mainCamera = new BABYLON.FreeCamera("camera", new BABYLON.Vector3(0, 3.5, 0), this);
+        this.mainCamera.fov = 60 * degToRad;
+        this.mainCamera.rotation.x = -10 * degToRad;
 
-        this.mainCamera = new BABYLON.ArcRotateCamera("camera", beta, alpha, 0.01, target, this);
-        this.mainCamera.fov = fov;
     }
 
     _createLight () {
