@@ -16,12 +16,12 @@ export default class MainScene extends BABYLON.Scene {
         this._createCamera();
         this._createPostProcessing();
         this._createLight();
+        this._createFog();
 
         this._createStaticGeometry();
-        this._createProbe();
-
-        this._createFog();
         this._createDinamicGeometry();
+
+        this._createProbe();
     }
 
     _createCamera () {
@@ -53,6 +53,11 @@ export default class MainScene extends BABYLON.Scene {
         this._light.radius = 10;
     }
 
+    _createFog () {
+        this.fog = new LowFog("Fog", this, 500, 50, 0.1, 2);
+        this.fog.position = new BABYLON.Vector3(0, 2, 0);
+    }
+
     _createStaticGeometry () {
         this._ground = createGround(this, 1000);
         this._skybox = createSkybox(this, "assets/grimmnight", 10000);
@@ -60,6 +65,11 @@ export default class MainScene extends BABYLON.Scene {
 
         this.staticMeshes.push(this._ground);
         this.staticMeshes.push(this._skybox);
+    }
+
+    _createDinamicGeometry () {
+        this.star = new ShootingStart(this);
+        this.star.position = new BABYLON.Vector3(-2, 3.5, 10);
     }
 
     _createProbe () {
@@ -71,15 +81,5 @@ export default class MainScene extends BABYLON.Scene {
         });
 
         this.probe.position = new BABYLON.Vector3(0, 2, 0);
-    }
-
-    _createFog () {
-        this.fog = new LowFog("Fog", this, 500, 50, 0.1, 2);
-        this.fog.position = new BABYLON.Vector3(0, 2, 0);
-    }
-
-    _createDinamicGeometry () {
-        this.star = new ShootingStart(this);
-        this.star.position = new BABYLON.Vector3(-2, 3.5, 10);
     }
 }
