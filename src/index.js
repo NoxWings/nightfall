@@ -1,4 +1,6 @@
 import BABYLON from "babylonjs";
+import "babylonjs-materials";
+
 import MainScene from "./components/main_scene";
 
 export default function app () {
