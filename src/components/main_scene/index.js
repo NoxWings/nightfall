@@ -31,6 +31,7 @@ export default class MainScene extends BABYLON.Scene {
         this.mainCamera = new BABYLON.FreeCamera("camera", new BABYLON.Vector3(0, 3.5, 0), this);
         this.mainCamera.fov = 60 * degToRad;
         this.mainCamera.rotation.x = -10 * degToRad;
+        this.mainCamera.rotation.y = 110 * degToRad;
     }
 
     _createPostProcessing () {
@@ -66,7 +67,7 @@ export default class MainScene extends BABYLON.Scene {
 
     _createDinamicGeometry () {
         this._star = new ShootingStart(this);
-        this._star.position = new BABYLON.Vector3(-2, 3.5, 10);
+        this._star.position = new BABYLON.Vector3(10, 3.5, -5);
     }
 
     _createProbe () {

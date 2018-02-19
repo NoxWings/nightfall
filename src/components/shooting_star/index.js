@@ -23,12 +23,12 @@ export default class ShootingStart extends BABYLON.Mesh {
 
         const m = new BABYLON.StandardMaterial("StarMat", this._scene);
         m.disableLighting = true;
-        m.emissiveColor = BABYLON.Color3.White();
+        m.emissiveColor = new BABYLON.Color3(1.5, 1, 0.9);
         m.emissiveFresnelParameters = new BABYLON.FresnelParameters();
-        m.emissiveFresnelParameters.bias = 0.3;
+        m.emissiveFresnelParameters.bias = 0.05;
         m.emissiveFresnelParameters.power = 4;
-        m.emissiveFresnelParameters.leftColor = new BABYLON.Color3(0, 0.4, 1);
-        m.emissiveFresnelParameters.rightColor = new BABYLON.Color3(.4, .8, 1);
+        m.emissiveFresnelParameters.leftColor = new BABYLON.Color3(1, 0.4, 0.2);
+        m.emissiveFresnelParameters.rightColor = new BABYLON.Color3(1, 0.7, 0.5);
 
         this.ball.material = m;
     }

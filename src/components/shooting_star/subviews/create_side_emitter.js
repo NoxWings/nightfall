@@ -7,9 +7,9 @@ export default function createSideEmitter(scene) {
     particleSystem.particleTexture = new BABYLON.Texture("assets/flare.png", scene);
 
     // Colors of all particles
-    particleSystem.color1 = new BABYLON.Color4(0.7, 0.8, 1.0, 1.0);
-    particleSystem.color2 = new BABYLON.Color4(0.2, 0.5, 1.0, 1.0);
-    particleSystem.colorDead = new BABYLON.Color4(0, 0, 0.2, 0.0);
+    particleSystem.color1 = new BABYLON.Color4(1.0, 0.8, 0.7, 1.0);
+    particleSystem.color2 = new BABYLON.Color4(1.0, 0.5, 0.2, 1.0);
+    particleSystem.colorDead = new BABYLON.Color4(0.2, 0.1, 0, 0.0);
 
     // Size of each particle (random between...
     particleSystem.minSize = 0.1;
