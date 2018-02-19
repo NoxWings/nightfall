@@ -37,7 +37,7 @@ export default class MainScene extends BABYLON.Scene {
     _createPostProcessing () {
         this.pipeline = new BABYLON.DefaultRenderingPipeline("default", true, this, [this.mainCamera]);
 
-        this.pipeline.bloomEnabled = false;
+        this.pipeline.bloomEnabled = true;
         this.pipeline.bloomWeight = 0.3;
 
         this.pipeline.imageProcessingEnabled = true;
