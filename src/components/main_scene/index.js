@@ -7,6 +7,8 @@ import ShootingStart from "../shooting_star";
 import LowFog from "../low_fog";
 
 const DEG_TO_RAD = Math.PI / 180;
+const TAU = Math.PI * 2;
+
 
 export default class MainScene extends BABYLON.Scene {
     constructor(engine) {
@@ -66,8 +68,22 @@ export default class MainScene extends BABYLON.Scene {
     }
 
     _createDinamicGeometry () {
-        this._star = new ShootingStart(this);
-        this._star.position = new BABYLON.Vector3(10, 3.5, -5);
+        const numStars = 20;
+        const sectionAngle = TAU / numStars;
+
+        for (var i = 0; i < numStars; i++) {
+            const angle = i * sectionAngle + Math.random() * sectionAngle;
+            const distance = 400 + Math.random() * 300;
+            const delay = Math.random() * 10 * 1000;
+
+            const position = new BABYLON.Vector3(Math.sin(angle), 0, Math.cos(angle));
+            position.scaleInPlace(distance);
+
+            setTimeout(() => {
+                const star = new ShootingStart(this);
+                star.position = position;
+            }, delay);
+        }
     }
 
     _createProbe () {
