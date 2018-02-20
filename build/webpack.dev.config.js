@@ -7,6 +7,7 @@ module.exports = merge(baseConf, {
     devServer: {
         contentBase: FOLDERS.DIST,
         publicPath: "/",
+        host: "0.0.0.0",
         stats: {
             all: false,
             warnings: true,
