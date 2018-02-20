@@ -1,7 +1,7 @@
 import BABYLON from "babylonjs";
 
 export default function createSideEmitter(scene) {
-    const particleSystem = new BABYLON.ParticleSystem("particles", 2000, scene);
+    const particleSystem = new BABYLON.ParticleSystem("particles", 2500, scene);
 
     //Texture of each particle
     particleSystem.particleTexture = new BABYLON.Texture("assets/flare.png", scene);
@@ -12,21 +12,21 @@ export default function createSideEmitter(scene) {
     particleSystem.colorDead = new BABYLON.Color4(0.2, 0.1, 0, 0.0);
 
     // Size of each particle (random between...
-    particleSystem.minSize = 0.1;
-    particleSystem.maxSize = 0.5;
+    particleSystem.minSize = 2;
+    particleSystem.maxSize = 2;
 
     // Life time of each particle (random between...
     particleSystem.minLifeTime = 0.03;
     particleSystem.maxLifeTime = 0.1;
 
     // Emission rate
-    particleSystem.emitRate = 1500;
+    particleSystem.emitRate = 15000;
 
     // Blend mode : BLENDMODE_ONEONE, or BLENDMODE_STANDARD
     particleSystem.blendMode = BABYLON.ParticleSystem.BLENDMODE_ONEONE;
 
     // Set the gravity of all particles
-    particleSystem.gravity = new BABYLON.Vector3(0, -9.8, 0);
+    particleSystem.gravity = new BABYLON.Vector3(0, 9.8, 0);
 
     // Angular speed, in radians
     particleSystem.minAngularSpeed = 0;
