@@ -3,6 +3,7 @@ import BABYLON from "babylonjs";
 import createSideEmitter from "./subviews/create_side_emitter";
 
 import rotate from "./actions/rotate";
+import fall from "./actions/fall";
 
 export default class ShootingStart extends BABYLON.Mesh {
     constructor(scene) {
@@ -53,7 +54,8 @@ export default class ShootingStart extends BABYLON.Mesh {
 
     _addActions () {
         this.ball.animations.push(rotate());
+        this.ball.animations.push(fall());
 
-        this._scene.beginAnimation(this.ball, 0, 100, true);
+        this._scene.beginAnimation(this.ball, 0, 330, true);
     }
 }
