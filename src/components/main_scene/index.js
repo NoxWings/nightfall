@@ -28,7 +28,7 @@ export default class MainScene extends BABYLON.Scene {
     }
 
     _createCamera () {
-        this.mainCamera = new BABYLON.FreeCamera("camera", new BABYLON.Vector3(0, 3.5, 0), this);
+        this.mainCamera = new BABYLON.FreeCamera("camera", new BABYLON.Vector3(0, 0, 0), this);
         this.mainCamera.fov = 60 * DEG_TO_RAD;
         this.mainCamera.rotation.x = -17 * DEG_TO_RAD;
         this.mainCamera.rotation.y = 145 * DEG_TO_RAD;
@@ -83,7 +83,7 @@ export default class MainScene extends BABYLON.Scene {
 
     _createOcean () {
         this._ocean = createOcean(this);
-        this._ocean.position = new BABYLON.Vector3(0, -50, 0);
+        this._ocean.position = new BABYLON.Vector3(0, -20, 0);
         this._ocean.rotation.y = -45 * DEG_TO_RAD;
         this.staticMeshes.forEach(mesh => {
             this._ocean.material.addToRenderList(mesh);
