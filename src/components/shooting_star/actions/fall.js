@@ -10,14 +10,14 @@ export default function () {
     );
 
     animation.setKeys([{
-        fame: 0,
-        value: 150
+        frame: 0,
+        value: 650
     }, {
-        frame: 150,
-        value: -1
+        frame: 300,
+        value: -20
     }, {
-        frame: 200,
-        value: -150
+        frame: 330,
+        value: -1500
     }]);
 
     return animation;

@@ -14,7 +14,7 @@ export default function () {
         value: 0
     }, {
         frame: 30,
-        value: 3 * Math.PI
+        value: 2.5 * Math.PI
     }]);
 
     return animation;
