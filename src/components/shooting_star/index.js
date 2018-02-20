@@ -13,25 +13,36 @@ export default class ShootingStart extends BABYLON.Mesh {
         this._scene.addMesh(this);
 
         this._addBall();
+        this._addTrail();
         this._addEmitters();
         this._addActions();
     }
 
     _addBall () {
-        this.ball = BABYLON.Mesh.CreateSphere("Star", 32, 1, this._scene);
+        this.ball = new BABYLON.TransformNode("Star", this._scene);
         this.ball.parent = this;
         this.ball.scaling.y = 2;
+    }
 
-        const m = new BABYLON.StandardMaterial("StarMat", this._scene);
+    _addTrail () {
+        const trail = BABYLON.MeshBuilder.CreatePlane("plane", {
+            height: 1400,
+            width: 4,
+            sideOrientation: BABYLON.Mesh.DOUBLESIDE
+        }, this._scene);
+        trail.position.y = 350;
+
+        trail.billboardMode = BABYLON.Mesh.BILLBOARDMODE_Y;
+        trail.parent = this.ball;
+
+        const m = new BABYLON.PBRMaterial("mat", this._scene);
+        m.alpha = 0;
+        m.alphaMode = BABYLON.Engine.ALPHA_ONEONE;
         m.disableLighting = true;
-        m.emissiveColor = new BABYLON.Color3(1.5, 1, 0.9);
-        m.emissiveFresnelParameters = new BABYLON.FresnelParameters();
-        m.emissiveFresnelParameters.bias = 0.05;
-        m.emissiveFresnelParameters.power = 4;
-        m.emissiveFresnelParameters.leftColor = new BABYLON.Color3(1, 0.4, 0.2);
-        m.emissiveFresnelParameters.rightColor = new BABYLON.Color3(1, 0.7, 0.5);
+        m.emissiveTexture = new BABYLON.Texture("assets/trail.png", this._scene);
+        m.emissiveColor = new BABYLON.Color3(1, 0.5, 0.2);
 
-        this.ball.material = m;
+        trail.material = m;
     }
 
     _addEmitters () {
