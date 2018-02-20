@@ -36,18 +36,18 @@ export default class ShootingStart extends BABYLON.Mesh {
     _addEmitters () {
         const ps1 = createSideEmitter(this._scene);
         ps1.emitter = this.ball; // the starting object, the emitter
-        ps1.minEmitBox = new BABYLON.Vector3(0.4, 0, 0); // Starting all from
-        ps1.maxEmitBox = new BABYLON.Vector3(0.4, 0, 0); // To...
-        ps1.direction1 = new BABYLON.Vector3(5, 15, 0);
-        ps1.direction2 = new BABYLON.Vector3(6, 15, 0);
+        ps1.minEmitBox = new BABYLON.Vector3(.1, 0, 0); // Starting all from
+        ps1.maxEmitBox = new BABYLON.Vector3(.1, 0, 0); // To...
+        ps1.direction1 = new BABYLON.Vector3(30, 50, 0);
+        ps1.direction2 = new BABYLON.Vector3(40, 50, 0);
         ps1.start();
 
         const ps2 = createSideEmitter(this._scene);
         ps2.emitter = this.ball; // the starting object, the emitter
-        ps2.minEmitBox = new BABYLON.Vector3(-0.4, 0, 0); // Starting all from
-        ps2.maxEmitBox = new BABYLON.Vector3(-0.4, 0, 0); // To...
-        ps2.direction1 = new BABYLON.Vector3(-5, 15, 0);
-        ps2.direction2 = new BABYLON.Vector3(-6, 15, 0);
+        ps2.minEmitBox = new BABYLON.Vector3(-.1, 0, 0); // Starting all from
+        ps2.maxEmitBox = new BABYLON.Vector3(-.1, 0, 0); // To...
+        ps2.direction1 = new BABYLON.Vector3(-40, 50, 0);
+        ps2.direction2 = new BABYLON.Vector3(-40, 50, 0);
         ps2.start();
     }
 
