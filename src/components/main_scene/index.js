@@ -68,7 +68,7 @@ export default class MainScene extends BABYLON.Scene {
     }
 
     _createDinamicGeometry () {
-        const numStars = 20;
+        const numStars = 12;
         const sectionAngle = TAU / numStars;
 
         for (var i = 0; i < numStars; i++) {
