@@ -8,9 +8,9 @@
     "lint": "eslint *.js src/ test/",
     "unit-test": "mocha --reporter tap",
     "test": "npm run lint && npm run unit-test",
-    "build": "webpack --config build/webpack.base.config.js",
-    "watch": "webpack --watch --config build/webpack.dev.config.js",
-    "start": "webpack-dev-server --config build/webpack.dev.config.js"
+    "build": "webpack --config webpack/webpack.base.config.js",
+    "watch": "webpack --watch --config webpack/webpack.dev.config.js",
+    "start": "webpack-dev-server --config webpack/webpack.dev.config.js"
   },
   "author": "David García Miguel <noxwings@gmail.com>",
   "devDependencies": {
@@ -39,6 +39,7 @@
   "dependencies": {
     "babel-runtime": "^6.26.0",
     "babylonjs": "^3.2.0-alpha7",
+    "babylonjs-gui": "^3.2.0-alpha10",
     "babylonjs-materials": "^3.2.0-alpha7"
   }
 }
