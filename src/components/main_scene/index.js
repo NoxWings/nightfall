@@ -27,6 +27,8 @@ export default class MainScene extends BABYLON.Scene {
 
         this._createProbe();
         this._createOcean();
+
+        this._createAmbientSound();
     }
 
     _createCamera () {
@@ -104,5 +106,10 @@ export default class MainScene extends BABYLON.Scene {
         this.staticMeshes.forEach(mesh => {
             this._ocean.material.addToRenderList(mesh);
         });
+    }
+
+    _createAmbientSound () {
+        this._ambientSound = new BABYLON.Sound("Waves", "assets/ocean_waves.mp3", this, null, { loop: true, autoplay: true });
+        this._ambientSound.setVolume(0.25);
     }
 }
