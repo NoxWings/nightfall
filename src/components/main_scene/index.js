@@ -2,6 +2,7 @@ import BABYLON from "babylonjs";
 
 import createSkybox from "./subviews/create_skybox";
 import createOcean from "./subviews/create_ocean";
+import createGUI from "./subviews/create_gui";
 
 import ShootingStart from "../shooting_star";
 import LowFog from "../low_fog";
@@ -29,6 +30,7 @@ export default class MainScene extends BABYLON.Scene {
         this._createOcean();
 
         this._createAmbientSound();
+        this._createGUI();
     }
 
     _createCamera () {
@@ -111,5 +113,9 @@ export default class MainScene extends BABYLON.Scene {
     _createAmbientSound () {
         this._ambientSound = new BABYLON.Sound("Waves", "assets/ocean_waves.mp3", this, null, { loop: true, autoplay: true });
         this._ambientSound.setVolume(0.25);
+    }
+
+    _createGUI () {
+        createGUI(this, this._ambientSound);
     }
 }
