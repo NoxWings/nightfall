@@ -9,7 +9,7 @@ module.exports = {
         SRC: path.resolve(PROJECT_FOLDER, "src"),
         STATIC: path.resolve(PROJECT_FOLDER, "static"),
         ASSETS: path.resolve(PROJECT_FOLDER, "assets"),
-        BUILD: path.resolve(PROJECT_FOLDER, "build"),
+        CACHE: path.resolve(PROJECT_FOLDER, ".cache"),
         DIST: DIST,
         DIST_ASSETS: path.join(DIST, "assets")
     }
