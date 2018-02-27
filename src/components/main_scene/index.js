@@ -48,6 +48,8 @@ export default class MainScene extends BABYLON.Scene {
 
         this.pipeline.imageProcessingEnabled = true;
         this.pipeline.imageProcessing.vignetteEnabled = true;
+        this.pipeline.imageProcessing.vignetteWeight = 5;
+        this.pipeline.imageProcessing.vignetteStretch = 1;
         this.pipeline.imageProcessing.exposure = 1.5;
         this.pipeline.imageProcessing.contrast = 1.2;
     }
