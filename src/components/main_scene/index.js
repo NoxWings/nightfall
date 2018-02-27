@@ -79,7 +79,7 @@ export default class MainScene extends BABYLON.Scene {
 
         for (var i = 0; i < numStars; i++) {
             const angle = i * sectionAngle + Math.random() * sectionAngle;
-            const distance = 400 + Math.random() * 300;
+            const distance = 400 + Math.random() * 200;
             const delay = Math.random() * 10 * 1000;
 
             const position = new BABYLON.Vector3(Math.sin(angle), 0, Math.cos(angle));
