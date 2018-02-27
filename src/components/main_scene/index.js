@@ -114,7 +114,8 @@ export default class MainScene extends BABYLON.Scene {
 
     _createAmbientSound () {
         this._ambientSound = new BABYLON.Sound("Waves", "assets/ocean_waves.mp3", this, null, { loop: true, autoplay: true });
-        this._ambientSound.setVolume(0.25);
+        const volume = localStorage.getItem("volume") || 0.25;
+        this._ambientSound.setVolume(volume);
     }
 
     _createGUI () {

@@ -28,6 +28,7 @@ export default function create_gui (scene, ambientSound) {
     slider.isThumbCircle = true;
 
     slider.onValueChangedObservable.add((value) => {
+        localStorage.setItem("volume", value);
         ambientSound.setVolume(value);
         header.text = getSoundText();
     });
