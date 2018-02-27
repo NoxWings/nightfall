@@ -12,8 +12,8 @@ export default function createSideEmitter(scene) {
     particleSystem.colorDead = new BABYLON.Color4(0.2, 0.1, 0, 0.0);
 
     // Size of each particle (random between...
-    particleSystem.minSize = 2;
-    particleSystem.maxSize = 2;
+    particleSystem.minSize = 3;
+    particleSystem.maxSize = 3;
 
     // Life time of each particle (random between...
     particleSystem.minLifeTime = 0.03;
