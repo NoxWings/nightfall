@@ -40,7 +40,7 @@ export default class ShootingStart extends BABYLON.Mesh {
         m.alphaMode = BABYLON.Engine.ALPHA_ONEONE;
         m.disableLighting = true;
         m.emissiveTexture = new BABYLON.Texture("assets/trail.png", this._scene);
-        m.emissiveColor = new BABYLON.Color3(1, 0.5, 0.2);
+        m.emissiveColor = new BABYLON.Color3(3, 1.5, 0.6);
 
         trail.material = m;
     }

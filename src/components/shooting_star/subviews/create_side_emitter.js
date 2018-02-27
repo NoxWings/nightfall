@@ -7,8 +7,8 @@ export default function createSideEmitter(scene) {
     particleSystem.particleTexture = new BABYLON.Texture("assets/flare.png", scene);
 
     // Colors of all particles
-    particleSystem.color1 = new BABYLON.Color4(1.0, 0.8, 0.7, 1.0);
-    particleSystem.color2 = new BABYLON.Color4(1.0, 0.5, 0.2, 1.0);
+    particleSystem.color1 = new BABYLON.Color4(3.0, 2.4, 2.1, 1.0);
+    particleSystem.color2 = new BABYLON.Color4(3.0, 1.5, 0.6, 1.0);
     particleSystem.colorDead = new BABYLON.Color4(0.2, 0.1, 0, 0.0);
 
     // Size of each particle (random between...
@@ -20,7 +20,7 @@ export default function createSideEmitter(scene) {
     particleSystem.maxLifeTime = 0.1;
 
     // Emission rate
-    particleSystem.emitRate = 15000;
+    particleSystem.emitRate = 1000;
 
     // Blend mode : BLENDMODE_ONEONE, or BLENDMODE_STANDARD
     particleSystem.blendMode = BABYLON.ParticleSystem.BLENDMODE_ONEONE;
