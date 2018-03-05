@@ -3,6 +3,7 @@ import BABYLON from "babylonjs";
 import createSkybox from "./subviews/create_skybox";
 import createOcean from "./subviews/create_ocean";
 import createGUI from "./subviews/create_gui";
+import createCameraMovement from "./actions/camera_movement";
 
 import ShootingStart from "../shooting_star";
 import LowFog from "../low_fog";
@@ -38,6 +39,8 @@ export default class MainScene extends BABYLON.Scene {
         this.mainCamera.fov = 60 * DEG_TO_RAD;
         this.mainCamera.rotation.x = -17 * DEG_TO_RAD;
         this.mainCamera.rotation.y = 145 * DEG_TO_RAD;
+
+        this.registerBeforeRender(createCameraMovement(this.mainCamera));
     }
 
     _createPostProcessing () {
