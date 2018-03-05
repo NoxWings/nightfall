@@ -8,7 +8,7 @@
     "lint": "eslint *.js src/ test/",
     "unit-test": "mocha --reporter tap",
     "test": "npm run lint && npm run unit-test",
-    "build": "webpack --config webpack/webpack.base.config.js",
+    "build": "webpack --config webpack/webpack.prod.config.js",
     "watch": "webpack --watch --config webpack/webpack.dev.config.js",
     "start": "webpack-dev-server --config webpack/webpack.dev.config.js",
     "clean": "rm -rf dist",
