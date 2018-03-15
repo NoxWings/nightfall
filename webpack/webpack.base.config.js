@@ -25,7 +25,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new CleanWebpackPlugin([ FOLDERS.DIST ]),
+        new CleanWebpackPlugin([ FOLDERS.DIST ], { root: FOLDERS.PROJECT }),
         new CopyWebpackPlugin([{ from: FOLDERS.STATIC, to: FOLDERS.DIST }]),
         new CopyWebpackPlugin([{ from: FOLDERS.ASSETS, to: FOLDERS.DIST_ASSETS, flatten: true }]),
         new ImageminPlugin({
