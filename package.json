@@ -6,8 +6,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint *.js src/ test/",
-    "unit-test": "mocha --reporter tap",
-    "test": "npm run lint && npm run unit-test",
+    "test": "npm run lint && echo 'oops no tests for this repo'",
     "build": "webpack --config webpack/webpack.prod.config.js",
     "watch": "webpack --watch --config webpack/webpack.dev.config.js",
     "start": "webpack-dev-server --config webpack/webpack.dev.config.js",

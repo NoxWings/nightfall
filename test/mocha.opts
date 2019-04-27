@@ -1,4 +1,0 @@
---require test/helpers/helper.js
---check-leaks
---recursive
---require babel-register
