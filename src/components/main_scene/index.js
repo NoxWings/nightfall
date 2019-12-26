@@ -35,8 +35,8 @@ export default class MainScene extends BABYLON.Scene {
 
     _createCamera () {
         this.mainCamera = new BABYLON.FreeCamera("camera", new BABYLON.Vector3(0, 0, 0), this);
-        this.mainCamera.fov = 60 * DEG_TO_RAD;
-        this.mainCamera.rotation.x = -17 * DEG_TO_RAD;
+        this.mainCamera.fov = 80 * DEG_TO_RAD;
+        this.mainCamera.rotation.x = -22 * DEG_TO_RAD;
         this.mainCamera.rotation.y = 145 * DEG_TO_RAD;
 
         this.registerBeforeRender(createCameraMovement(this.mainCamera));

@@ -11,7 +11,7 @@ export default function () {
 
     animation.setKeys([{
         frame: 0,
-        value: 650
+        value: 850
     }, {
         frame: 300,
         value: -20
