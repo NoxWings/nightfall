@@ -31,7 +31,6 @@ export default class MainScene extends BABYLON.Scene {
         this._createOcean();
 
         this._createAmbientSound();
-        this._createGUI();
     }
 
     _createCamera () {
@@ -116,12 +115,12 @@ export default class MainScene extends BABYLON.Scene {
     }
 
     _createAmbientSound () {
+        const url = new URL(location.href);
+        if (url.searchParams.has("mute")) return;
+
         this._ambientSound = new BABYLON.Sound("Waves", "assets/ocean_waves.mp3", this, null, { loop: true, autoplay: true });
         const volume = localStorage.getItem("volume") || 0.25;
         this._ambientSound.setVolume(volume);
-    }
-
-    _createGUI () {
         createGUI(this, this._ambientSound);
     }
 }
