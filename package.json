@@ -10,6 +10,7 @@
     "build": "webpack --config webpack/webpack.prod.config.js",
     "watch": "webpack --watch --config webpack/webpack.dev.config.js",
     "start": "webpack-dev-server --config webpack/webpack.dev.config.js",
+    "server": "npx http-server dist",
     "clean:dist": "rm -rf dist",
     "clean:cache": "rm -rf .cache",
     "clean": "run-p clean:dist clean:cache",
@@ -46,8 +47,8 @@
   },
   "dependencies": {
     "babel-runtime": "^6.26.0",
-    "babylonjs": "^3.2.0-alpha7",
-    "babylonjs-gui": "^3.2.0-alpha10",
-    "babylonjs-materials": "^3.2.0-alpha7"
+    "babylonjs": "3.2.0-alpha7",
+    "babylonjs-gui": "3.2.0-alpha10",
+    "babylonjs-materials": "3.2.0-alpha7"
   }
 }

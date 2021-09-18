@@ -3,7 +3,7 @@ import BABYLON from "babylonjs";
 export default function createSkyBox(scene, baseTexture, size) {
     const skybox = BABYLON.MeshBuilder.CreateBox("skyBox", { size }, scene);
 
-    const extensions = ["_front.png", "_up.png", "_right.png", "_back.png", "_down.png", "_left.png"];
+    const extensions = ["_front.jpg", "_up.jpg", "_right.jpg", "_back.jpg", "_down.jpg", "_left.jpg"];
 
     const skyboxMaterial = new BABYLON.StandardMaterial("skyBox", scene);
     skyboxMaterial.backFaceCulling = false;
